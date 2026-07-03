@@ -1,0 +1,29 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  "files.exclude": {
+    "**/.next": true,
+    "**/node_modules": true
+  },
+
+  "js/ts.tsdk.path": "./node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+
+  "editor.quickSuggestions": {
+    "strings": true
+  }
+}
