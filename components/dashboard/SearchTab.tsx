@@ -26,7 +26,7 @@ export default function SearchTab() {
           {currentNews.map((item, i) => (
             <div
               key={i}
-              className="p-3 bg-white border border-gray-200 rounded-md text-sm text-gray-800"
+              className="p-3 border border-gray-200 rounded-md text-sm text-gray-800"
             >
               {item}
             </div>
@@ -58,10 +58,7 @@ export default function SearchTab() {
         </h3>
         <div className="flex flex-wrap gap-2">
           {trendingKeywords.map((item, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm"
-            >
+            <span key={i} className="px-3 py-1 bg-blue-50 rounded-full text-sm">
               {item}
             </span>
           ))}
