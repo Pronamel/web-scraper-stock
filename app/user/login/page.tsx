@@ -19,7 +19,7 @@ export default function LoginPage() {
         className="flex w-full max-w-sm flex-col gap-4"
         onSubmit={(e) => {
           e.preventDefault();
-          router.push("/dashboard");
+          router.push("/user/dashboard");
         }}
       >
         <div className="flex flex-col gap-1">
@@ -56,19 +56,26 @@ export default function LoginPage() {
         >
           Log in
         </button>
+        <button
+          type="button"
+          className="mt-2 rounded-xl bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700 transition-colors"
+          onClick={() => router.push("/admin/login")}
+        >
+          Admin Login
+        </button>
 
         {/* Register / Forgot password links */}
         <div className="flex justify-between text-sm">
           <button
             type="button"
-            onClick={() => router.push("/reg-forgot?mode=forgot")}
+            onClick={() => router.push("/user/reg-forgot?mode=forgot")}
             className="text-blue-600 hover:underline"
           >
             Forgot password?
           </button>
           <button
             type="button"
-            onClick={() => router.push("/reg-forgot?mode=register")}
+            onClick={() => router.push("/user/reg-forgot?mode=register")}
             className="text-blue-600 hover:underline"
           >
             Register

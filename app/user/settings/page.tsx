@@ -2,8 +2,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import BackButton from "@/components/BackButton";
-import ThemeToggle from "@/components/settings/ThemeToggle";
+import BackButton from "@/app/user/components/BackButton";
+import ThemeToggle from "@/app/user/components/settings/ThemeToggle";
 
 export default function SettingsPage() {
   const router = useRouter();

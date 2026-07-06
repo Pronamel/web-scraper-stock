@@ -9,7 +9,7 @@ type BackButtonProps = {
 };
 
 export default function BackButton({
-  href = "/dashboard",
+  href = "/user/dashboard",
   label = "Back",
 }: BackButtonProps) {
   const router = useRouter();

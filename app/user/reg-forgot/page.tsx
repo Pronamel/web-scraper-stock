@@ -116,7 +116,7 @@ function RegForgotContent() {
       {/* Back to login */}
       <button
         type="button"
-        onClick={() => router.push("/login")}
+        onClick={() => router.push("/user/login")}
         className="text-sm text-blue-600 hover:underline"
       >
         ← Back to login
