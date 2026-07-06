@@ -1,38 +1,21 @@
-"use client";
-import { useRouter } from "next/navigation";
-
+// app/settings/page.tsx
+import BackButton from "@/components/BackButton";
+import ThemeToggle from "@/components/settings/ThemeToggle";
 
 export default function SettingsPage() {
   const router = useRouter();
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
-      <button
-        onClick={() => router.push("/account-settings")}
-        className="w-125 rounded-xl bg-white py-5 text-xl font-semibold text-gray-800 hover:bg-gray-200 transition-colors border-2 border-gray-300"
-      >
-        Account Settings
-      </button>
+    <>
+      <BackButton />
 
-      <button
-        onClick={() => router.push("/general-settings")}
-        className="w-125 rounded-xl bg-white py-5 text-xl font-semibold text-gray-800 hover:bg-gray-200 transition-colors border-2 border-gray-300"
-      >
-        General Settings
-      </button>
+      <div className="max-w-2xl mx-auto p-6 flex flex-col gap-6">
+        <h1 className="text-2xl font-bold">Settings</h1>
 
-      <button
-        onClick={() => router.push("/sign-out")}
-        className="w-125 rounded-xl bg-white py-5 text-xl font-semibold text-gray-800 hover:bg-gray-200 transition-colors border-2 border-gray-300"
-      >
-        Sign out
-      </button>
-
-      <button
-        onClick={() => router.push("/bank-account-settings")}
-        className="w-125 rounded-xl bg-white py-5 text-xl font-semibold text-gray-800 hover:bg-gray-200 transition-colors border-2 border-gray-300"
-      >
-        Bank Account Settings
-      </button>
-    </div>
+        <section>
+          <h2 className="text-lg font-semibold mb-3">Appearance</h2>
+          <ThemeToggle />
+        </section>
+      </div>
+    </>
   );
 }
