@@ -1,4 +1,5 @@
 // app/settings/page.tsx
+"use client";
 
 import { useRouter } from "next/navigation";
 import BackButton from "@/components/BackButton";
