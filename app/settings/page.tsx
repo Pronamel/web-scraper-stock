@@ -3,6 +3,7 @@ import BackButton from "@/components/BackButton";
 import ThemeToggle from "@/components/settings/ThemeToggle";
 
 export default function SettingsPage() {
+  const router = useRouter();
   return (
     <>
       <BackButton />
