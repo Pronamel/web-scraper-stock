@@ -1,4 +1,6 @@
 // app/settings/page.tsx
+
+import { useRouter } from "next/navigation";
 import BackButton from "@/components/BackButton";
 import ThemeToggle from "@/components/settings/ThemeToggle";
 
