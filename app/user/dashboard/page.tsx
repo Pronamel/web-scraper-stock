@@ -2,11 +2,11 @@
 "use client";
 
 import { useState } from "react";
-import TabNav from "@/components/dashboard/TabNav";
-import PersonalDashboardTab from "@/components/dashboard/PersonalDashTab";
-import PersonalFeedTab from "@/components/dashboard/PersonalFeedTab";
-import ExploreFeedTab from "@/components/dashboard/ExploreFeedTab";
-import SearchTab from "@/components/dashboard/SearchTab";
+import TabNav from "@/app/user/components/dashboard/TabNav";
+import PersonalDashboardTab from "@/app/user/components/dashboard/PersonalDashTab";
+import PersonalFeedTab from "@/app/user/components/dashboard/PersonalFeedTab";
+import ExploreFeedTab from "@/app/user/components/dashboard/ExploreFeedTab";
+import SearchTab from "@/app/user/components/dashboard/SearchTab";
 
 const TAB_COMPONENTS: Record<string, React.ComponentType> = {
   dashboard: PersonalDashboardTab,
