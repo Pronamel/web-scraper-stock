@@ -1,9 +1,11 @@
 // components/dashboard/ExploreFeedTab.tsx
+import Feed from "./Feed";
+
 export default function ExploreFeedTab() {
   return (
-    <div>
-      <h2>Explore Feed</h2>
-      <p>Content for the explore feed goes here.</p>
-    </div>
+    <Feed
+      title="Explore Feed"
+      description="Random news related to stocks you're less familiar with."
+    />
   );
 }

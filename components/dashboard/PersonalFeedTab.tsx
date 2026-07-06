@@ -1,9 +1,11 @@
 // components/dashboard/PersonalFeedTab.tsx
+import Feed from "./Feed";
+
 export default function PersonalFeedTab() {
   return (
-    <div>
-      <h2>Personal Feed</h2>
-      <p>Content for the personal feed goes here.</p>
-    </div>
+    <Feed
+      title="Personal Feed"
+      description="News related to stocks you're interested in."
+    />
   );
 }
