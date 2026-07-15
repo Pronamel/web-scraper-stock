@@ -28,7 +28,7 @@ export default function LoginPage() {
           </label>
           <input
             id="email"
-            type="email"
+            //type="email"
             autoComplete="email"
             required
             placeholder="you@example.com"
