@@ -17,7 +17,7 @@ export default function Scrapers() {
       </div>
       <div className="flex gap-8 max-w-2xl">
         {/* Scraper List */}
-        <div className="flex-1 border-2 border-gray-400 rounded bg-white p-4">
+        <div className="flex-1 border-2 border-gray-700 rounded bg-[#262826] p-4">
           <h2 className="text-sm font-semibold mb-3 text-gray-600">Scraper List</h2>
           <ul className="space-y-2">
             {scraperList.map((item) => (
@@ -34,7 +34,7 @@ export default function Scrapers() {
         </div>
 
         {/* Black List */}
-        <div className="flex-1 border-2 border-gray-400 rounded bg-white p-4">
+        <div className="flex-1 border-2 border-gray-700 rounded bg-[#262826] p-4">
           <h2 className="text-sm font-semibold mb-3 text-gray-600">Black List</h2>
           <ul className="space-y-2">
             {blackList.map((item) => (

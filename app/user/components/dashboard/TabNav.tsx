@@ -34,25 +34,25 @@ export default function TabNav({ activeTab, onTabChange }: TabNavProperties) {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between px-6 py-3 bg-white border-b border-gray-200">
+    <nav className="flex items-center justify-between px-6 py-3 bg-[#262826] border-b border-gray-200">
       {/* Left: Logo / Company name */}
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 bg-blue-600 rounded-md" />
-        <span className="text-lg font-bold text-gray-800">
+        <span className="text-lg font-bold text-[#494D5F]">
           Iron Clad Scraper
         </span>
       </div>
 
       {/* Center: Tab buttons */}
-      <div className="flex gap-1 bg-gray-100 p-1 rounded-lg">
+      <div className="flex gap-1 bg-[#262826] p-1 rounded-lg">
         {TABS.map((tab) => (
           <button
             key={tab.key}
             onClick={() => onTabChange(tab.key)}
-            className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
+            className={` rounded-md text-sm font-medium transition-colors ${
               activeTab === tab.key
-                ? "bg-white text-blue-600 shadow-sm"
-                : "text-gray-600 hover:text-gray-900"
+                ? "px-5 py-2 bg-[#40f67f] text-black border-[4px] border-gray-800"
+                : "px-4 py-1.5 border-[3px] border-gray-400 text-white hover:text-white"
             }`}
           >
             {tab.label}
@@ -64,23 +64,23 @@ export default function TabNav({ activeTab, onTabChange }: TabNavProperties) {
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setIsDropdownOpen((prev) => !prev)}
-          className="w-9 h-9 rounded-full bg-gray-300 overflow-hidden border-2 border-transparent hover:border-blue-500 transition-colors"
+          className="w-9 h-9 rounded-full bg-[#8458B3] overflow-hidden border-2 border-transparent hover:border-[#494D5F] transition-colors"
         >
           {/* Replace with real image => <img src="..." />*/}
         </button>
 
         {isDropdownOpen && (
-          <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+          <div className="absolute right-0 mt-2 w-48 bg-[#494D5F] rounded-lg shadow-lg border border-[#8458B3] py-1 z-50">
             <a
               href="/user/settings"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              className="block px-4 py-2 text-sm text-[#E5EAF5] hover:bg-[#8458B3]"
             >
               Account Settings
             </a>
-            <hr className="my-1 border-gray-200" />
+            <hr className="my-1 border-[#8458B3]" />
             <a
               href="/user/login"
-              className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+              className="block px-4 py-2 text-sm text-red-400 hover:bg-[#8458B3]"
             >
               Sign out
             </a>

@@ -1,6 +1,7 @@
 // app/reg-forgot/page.tsx
 "use client";
 
+import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
@@ -11,6 +12,29 @@ function RegForgotContent() {
 
   const isForgot = mode === "forgot";
   const isRegister = mode === "register";
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function handleRegister(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    if (password !== confirm) { setError("Passwords do not match."); return; }
+    setLoading(true);
+    const res = await fetch("/user/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username: email, password }),
+    });
+    setLoading(false);
+    const data = await res.json();
+    if (res.status === 409) setError("Username already exists.");
+    else if (res.status === 201) router.push("/user/login");
+    else setError(data.message ?? "Registration failed.");
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-8 p-8">
@@ -58,9 +82,13 @@ function RegForgotContent() {
       {isRegister && (
         <form
           className="flex w-full max-w-sm flex-col gap-4"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleRegister}
         >
           <h2 className="text-xl font-semibold text-center">Create an account</h2>
+
+          {error && (
+            <p className="rounded-lg bg-red-50 px-4 py-2 text-sm text-red-600 border border-red-200">{error}</p>
+          )}
 
           <div className="flex flex-col gap-1">
             <label htmlFor="reg-email" className="text-sm font-medium">
@@ -72,6 +100,8 @@ function RegForgotContent() {
               autoComplete="email"
               required
               placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
             />
           </div>
@@ -86,6 +116,8 @@ function RegForgotContent() {
               autoComplete="new-password"
               required
               placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
             />
           </div>
@@ -100,15 +132,18 @@ function RegForgotContent() {
               autoComplete="new-password"
               required
               placeholder="••••••••"
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
               className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
             />
           </div>
 
           <button
             type="submit"
-            className="mt-2 rounded-xl bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700 transition-colors"
+            disabled={loading}
+            className="mt-2 rounded-xl bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700 transition-colors disabled:opacity-60"
           >
-            Register
+            {loading ? "Registering…" : "Register"}
           </button>
         </form>
       )}

@@ -38,7 +38,7 @@ function formatDate(raw: string) {
 export default function PostCard({ article }: { article: Article }) {
   return (
     <div className={`${ sentimentColorsBorder[article.overall_sentiment_label] ?? "text-gray-500"} 
-    w-72 flex-shrink-0 py-4 px-5 rounded-lg font-[Calibri] shadow-sm border-4 border-[#827E7E] bg-[#424140] flex flex-col gap-2`}>
+    w-72 flex-shrink-0 py-4 px-5 rounded-lg font-[Calibri] shadow-sm border-4 border-[#D0BDF4] bg-[#262826] flex flex-col gap-2`}>
 
       <div className="flex items-center justify-between text-xs text-gray-400">
         <span className="text-gray-400">{article.source}</span>

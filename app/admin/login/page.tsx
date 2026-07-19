@@ -25,8 +25,8 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white border border-gray-300 rounded p-8 w-full max-w-sm shadow-sm">
+    <div className="min-h-screen flex items-center justify-center bg-[#262826]">
+      <div className="bg-[#262826] border border-gray-700 rounded p-8 w-full max-w-sm shadow-sm">
         <h1 className="text-xl font-bold mb-6 text-center">Admin Login</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

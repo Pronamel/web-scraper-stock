@@ -25,7 +25,7 @@ export default async function ScraperControls({
         </Link>
         <h1 className="text-2xl font-semibold">Scraper Controls — {scraperName}</h1>
       </div>
-      <div className="border-2 border-gray-400 rounded bg-white p-6 max-w-md">
+      <div className="border-2 border-gray-700 rounded bg-[#262826] p-6 max-w-md">
         {/* Scraping inputs */}
         <div className="mb-6">
           <h2 className="text-sm font-semibold mb-3 text-gray-600">scraping</h2>
