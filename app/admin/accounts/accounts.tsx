@@ -14,9 +14,9 @@ export default function Accounts() {
         </Link>
         <h1 className="text-2xl font-semibold">Accounts</h1>
       </div>
-      <div className="border-2 border-gray-400 rounded bg-white p-4 max-w-sm">
+      <div className="border-2 border-gray-700 rounded bg-[#262826] p-4 max-w-sm">
         <h2 className="text-sm font-semibold mb-3 text-gray-600">Paying Accounts</h2>
-        <div className="border border-gray-300 rounded min-h-40 p-3">
+        <div className="border border-gray-700 rounded min-h-40 p-3">
           {payingAccounts.length === 0 ? (
             <p className="text-gray-400 text-sm">No paying accounts</p>
           ) : (
