@@ -2,14 +2,12 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-
 /* Global styles for the application. These styles are applied to the entire app and can be used to 
 define common design tokens, such as colors, fonts, and spacing. */
 :root {
   --background: #262826;
-  --foreground: #272744;
-  --primary: #bad7db
-;
+  --foreground: #515177;
+  --primary: #bad7db;
 }
 
 .dark {

@@ -1,6 +1,6 @@
 // app/login/page.tsx
 "use client";
-import Image from "next/image";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -35,18 +35,11 @@ export default function LoginPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-8 p-8">
       {/* Logo + site name */}
-      <div className="flex flex-col items-center gap-3 ml-[50px] ">
-        <span className="text-6xl ">
-          <Image
-             src="/forge-hammer.svg"
-             alt="Logo"
-             width={650}
-             height={300}
-             unoptimized
-          />
-
-        </span>
-        
+      <div className="flex flex-col items-center gap-3">
+        <span className="text-6xl">📈</span>
+        <h1 className="text-5xl font-extrabold tracking-tight text-white">
+          Stock Smith
+        </h1>
       </div>
 
       {/* Login form */}
@@ -61,7 +54,10 @@ export default function LoginPage() {
         )}
 
         <div className="flex flex-col gap-1">
-          <label htmlFor="username" className="text-sm text-gray-300 font-medium">
+          <label
+            htmlFor="username"
+            className="text-sm text-gray-300 font-medium"
+          >
             Username
           </label>
           <input
@@ -76,7 +72,10 @@ export default function LoginPage() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <label htmlFor="password" className="text-sm text-gray-300 font-medium">
+          <label
+            htmlFor="password"
+            className="text-sm text-gray-300 font-medium"
+          >
             Password
           </label>
           <input
@@ -97,13 +96,6 @@ export default function LoginPage() {
           className="mt-2 rounded-xl bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700 transition-colors disabled:opacity-60"
         >
           {loading ? "Logging in…" : "Log in"}
-        </button>
-        <button
-          type="button"
-          className="mt-2 rounded-xl bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700 transition-colors"
-          onClick={() => router.push("/admin/login")}
-        >
-          Admin Login
         </button>
 
         {/* Register / Forgot password links */}

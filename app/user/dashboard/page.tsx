@@ -1,4 +1,4 @@
-// app/dashboard/page.tsx
+// app/user/dashboard/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -7,12 +7,14 @@ import PersonalDashboardTab from "@/app/user/components/dashboard/PersonalDashTa
 import PersonalFeedTab from "@/app/user/components/dashboard/PersonalFeedTab";
 import ExploreFeedTab from "@/app/user/components/dashboard/ExploreFeedTab";
 import SearchTab from "@/app/user/components/dashboard/SearchTab";
+import AdminTab from "@/app/user/components/dashboard/AdminTab";
 
 const TAB_COMPONENTS: Record<string, React.ComponentType> = {
   dashboard: PersonalDashboardTab,
   "personal-feed": PersonalFeedTab,
   "explore-feed": ExploreFeedTab,
   search: SearchTab,
+  admin: AdminTab,
 };
 
 export default function DashboardPage() {
@@ -22,7 +24,7 @@ export default function DashboardPage() {
   return (
     <div>
       <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
-      <main>
+      <main className="px-10 py-4">
         <ActiveComponent />
       </main>
     </div>

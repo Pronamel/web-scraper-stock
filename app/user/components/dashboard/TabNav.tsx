@@ -2,7 +2,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 
 type TabNavProperties = {
   activeTab: string;
@@ -14,6 +13,7 @@ const TABS = [
   { key: "personal-feed", label: "Personal Feed" },
   { key: "explore-feed", label: "Explore Feed" },
   { key: "search", label: "Search" },
+  { key: "admin", label: "Admin" },
 ];
 
 export default function TabNav({ activeTab, onTabChange }: TabNavProperties) {
@@ -35,16 +35,13 @@ export default function TabNav({ activeTab, onTabChange }: TabNavProperties) {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between px-6 py-2 bg-[#262826] border-b border-gray-200">
+    <nav className="flex items-center justify-between px-6 py-3 bg-[#262826] border-b border-gray-200">
       {/* Left: Logo / Company name */}
       <div className="flex items-center gap-2">
-      <Image
-        src="/forge-hammer.svg"
-        alt="Logo"
-        width={180}
-        height={50}
-        unoptimized
-      />
+        <div className="w-8 h-8 bg-blue-600 rounded-md" />
+        <span className="text-lg font-bold text-[#494D5F]">
+          Iron Clad Scraper
+        </span>
       </div>
 
       {/* Center: Tab buttons */}
@@ -55,8 +52,8 @@ export default function TabNav({ activeTab, onTabChange }: TabNavProperties) {
             onClick={() => onTabChange(tab.key)}
             className={` rounded-md text-sm font-medium transition-colors ${
               activeTab === tab.key
-                ? "px-5 py-2 bg-[#40f67f] text-black border-[4px] border-gray-800"
-                : "px-4 py-1.5 border-[3px] border-gray-400 text-white hover:text-white"
+                ? "px-5 py-2 bg-primary text-black border-4 border-foreground"
+                : "px-4 py-1.5 bg-foreground border-[3px] border-background text-white hover:text-white"
             }`}
           >
             {tab.label}
