@@ -1,6 +1,7 @@
 // components/dashboard/TabNav.tsx
 "use client";
 
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
 type TabNavProperties = {
@@ -38,10 +39,13 @@ export default function TabNav({ activeTab, onTabChange }: TabNavProperties) {
     <nav className="flex items-center justify-between px-6 py-3 bg-[#262826] border-b border-gray-200">
       {/* Left: Logo / Company name */}
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-blue-600 rounded-md" />
-        <span className="text-lg font-bold text-[#494D5F]">
-          Iron Clad Scraper
-        </span>
+        <Image
+          src="/forge-hammer.svg"
+          alt="Logo"
+          width={180}
+          height={50}
+          unoptimized
+        />
       </div>
 
       {/* Center: Tab buttons */}
