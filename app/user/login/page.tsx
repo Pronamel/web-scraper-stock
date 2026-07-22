@@ -42,6 +42,7 @@ export default function LoginPage() {
              alt="Logo"
              width={650}
              height={300}
+             unoptimized
           />
 
         </span>

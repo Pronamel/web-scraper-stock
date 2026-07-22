@@ -43,6 +43,7 @@ export default function TabNav({ activeTab, onTabChange }: TabNavProperties) {
         alt="Logo"
         width={180}
         height={50}
+        unoptimized
       />
       </div>
 
