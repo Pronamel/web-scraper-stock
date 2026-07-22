@@ -1,6 +1,6 @@
 // app/login/page.tsx
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -35,9 +35,17 @@ export default function LoginPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-8 p-8">
       {/* Logo + site name */}
-      <div className="flex flex-col items-center gap-3">
-        <span className="text-6xl">📈</span>
-        <h1 className="text-5xl font-extrabold tracking-tight text-white">Stock Smith</h1>
+      <div className="flex flex-col items-center gap-3 ml-[50px] ">
+        <span className="text-6xl ">
+          <Image
+             src="/forge-hammer.svg"
+             alt="Logo"
+             width={650}
+             height={300}
+          />
+
+        </span>
+        
       </div>
 
       {/* Login form */}

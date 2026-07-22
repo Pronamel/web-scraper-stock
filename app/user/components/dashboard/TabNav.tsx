@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 type TabNavProperties = {
   activeTab: string;
@@ -34,13 +35,15 @@ export default function TabNav({ activeTab, onTabChange }: TabNavProperties) {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between px-6 py-3 bg-[#262826] border-b border-gray-200">
+    <nav className="flex items-center justify-between px-6 py-2 bg-[#262826] border-b border-gray-200">
       {/* Left: Logo / Company name */}
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-blue-600 rounded-md" />
-        <span className="text-lg font-bold text-[#494D5F]">
-          Iron Clad Scraper
-        </span>
+      <Image
+        src="/forge-hammer.svg"
+        alt="Logo"
+        width={180}
+        height={50}
+      />
       </div>
 
       {/* Center: Tab buttons */}
